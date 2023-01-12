@@ -308,7 +308,7 @@ class MyWindow(QtWidgets.QMainWindow, form_class):
                 r = FTPClass.tea().rmd(self.curr_remote)
                 self.label_8.setText(r + ' : ' + self.curr_remote)
                 self.populate_remote()
-                if '550' in r: # 퍼미션 에러가 발생하면 아래 익셉션에 raise 한다.
+                if '550' in r:
                     raise Exception(r)
             except Exception as e:
                 self.label_8.setText("서버쪽 권한 관련 에러가 발생하였습니다. (파일선택 X): "+ str(e))
@@ -335,7 +335,7 @@ class MyWindow(QtWidgets.QMainWindow, form_class):
                 print(r,"++++ 22")
                 self.label_8.setText(r + ' : ' + self.curr_remote)
                 self.populate_remote()
-                if '550' in r: # 퍼미션 에러가 발생하면 아래 익셉션에 rsise 한다.
+                if '550' in r: 
                     raise Exception(r)
 
             except Exception as e:
@@ -507,8 +507,8 @@ print("Before event loop")
 app.exec_()
 print("After event loop")
 
-
-
+#--------------------------------------------------
+#QR에 대한 함수들
 def cursor(status):
     """
     Enable and disable the cursor in the terminal
